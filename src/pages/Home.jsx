@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../contexts/UserInfoContext";
 
 const Home = () => {
-  const [user, setUser] = useState();
+  const { onChange } = useContext(UserContext);
+
+  const [user, setUser] = useState("");
+
+  const handleChangeUser = (event) => {
+    setUser(event.target.value);
+  };
 
   const submitForm = () => {
-    let name = document.querySelector("#homeInput").value;
-
-    setUser(name);
+    onChange(user);
     console.log(user);
   };
 
@@ -27,6 +32,8 @@ const Home = () => {
       </p>
 
       <input
+        value={user}
+        onChange={handleChangeUser}
         name="name"
         className="input homeInput"
         id="homeInput"
