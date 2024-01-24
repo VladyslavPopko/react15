@@ -18,10 +18,10 @@ const Cart = () => {
   const handleResetCart = () => {
     dispatch(resetCart(cartItems));
   };
-  const submitOrder =() => {
-    console.log("Your Order:")
-    cartItems.map(item=> console.log(`${item.name} x ${item.qty}`))
-  }
+  const submitOrder = () => {
+    console.log("Your Order:");
+    cartItems.map((item) => console.log(`${item.name} x ${item.qty}`));
+  };
   return (
     <div className="cart">
       <p className="cart_back" onClick={handleBackToMenu}>
@@ -36,7 +36,11 @@ const Cart = () => {
       <button onClick={submitOrder} className="cart_button" type="button">
         ORDER PIZZAS
       </button>
-      <button onClick={handleResetCart} className="cart_button cart_button_white" type="button">
+      <button
+        onClick={handleResetCart}
+        className="cart_button cart_button_white"
+        type="button"
+      >
         CLEAR CART
       </button>
     </div>

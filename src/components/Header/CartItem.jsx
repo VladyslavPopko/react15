@@ -1,5 +1,9 @@
 import { useDispatch } from "react-redux";
-import { decrementQty, deleteFromCart, incrementQty } from "../../redux/slices/cartSlice";
+import {
+  decrementQty,
+  deleteFromCart,
+  incrementQty,
+} from "../../redux/slices/cartSlice";
 
 const CartItem = ({ pizzaInfo }) => {
   const { id, name, unitPrice, qty } = pizzaInfo;
@@ -25,14 +29,26 @@ const CartItem = ({ pizzaInfo }) => {
       </div>
       <div className="cart_item_action">
         <p>€ {price}.00</p>
-        <button onClick={handleDecrementQty} className="cart_button" type="button">
+        <button
+          onClick={handleDecrementQty}
+          className="cart_button"
+          type="button"
+        >
           -
         </button>
         <p>{qty}</p>
-        <button onClick={handleIncrementQty} className="cart_button" type="button">
+        <button
+          onClick={handleIncrementQty}
+          className="cart_button"
+          type="button"
+        >
           +
         </button>
-        <button onClick={handleDeleteFromCart} className="cart_button" type="button">
+        <button
+          onClick={handleDeleteFromCart}
+          className="cart_button"
+          type="button"
+        >
           DELETE
         </button>
       </div>

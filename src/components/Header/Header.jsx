@@ -9,7 +9,7 @@ const Header = () => {
     <nav className="header">
       <div className="">
         <NavLink className="headerTitle" to="/">
-          PIZZA DAY 
+          PIZZA DAY
         </NavLink>
         <NavLink className="headerTitle" to="/cart">
           CART

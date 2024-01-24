@@ -8,9 +8,6 @@ import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 
 function App() {
-
-
-  
   return (
     <>
       <Header />

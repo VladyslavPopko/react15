@@ -9,9 +9,7 @@ const PizzasInfoContext = ({ children }) => {
   useEffect(() => {
     const getPizzas = async () => {
       try {
-        const res = await fetch(
-          `${PIZZA_API}/menu`
-        );
+        const res = await fetch(`${PIZZA_API}/menu`);
 
         if (!res.ok) {
           throw new Error("Failed to fetch");
@@ -26,7 +24,6 @@ const PizzasInfoContext = ({ children }) => {
 
     getPizzas();
   }, []);
-
 
   return (
     <PizzasContext.Provider value={pizzas}>{children}</PizzasContext.Provider>

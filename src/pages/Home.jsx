@@ -41,7 +41,7 @@ const Home = () => {
         type="text"
       />
       <br></br>
-        <button className="homeSubmit" onClick={submitForm}>
+      <button className="homeSubmit" onClick={submitForm}>
         Login
       </button>
     </div>
