@@ -7,9 +7,15 @@ const Header = () => {
 
   return (
     <nav className="header">
-      <NavLink className="headerTitle" to="/">
-        PIZZA DAY
-      </NavLink>
+      <div className="">
+        <NavLink className="headerTitle" to="/">
+          PIZZA DAY 
+        </NavLink>
+        <NavLink className="headerTitle" to="/cart">
+          CART
+        </NavLink>
+      </div>
+
       <input
         className="input"
         type="name"

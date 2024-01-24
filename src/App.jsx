@@ -5,6 +5,7 @@ import "./style/main.css";
 import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import Menu from "./pages/Menu";
+import Cart from "./pages/Cart";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/menu" element={<Menu />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
 
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>

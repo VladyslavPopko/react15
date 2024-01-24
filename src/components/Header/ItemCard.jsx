@@ -1,5 +1,13 @@
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/slices/cartSlice";
+
 const ItemCard = ({ pizzaInfo }) => {
   const { name, ingredients, imageUrl, unitPrice, soldOut } = pizzaInfo;
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(pizzaInfo));
+  };
 
   let ingredientsUp = "";
 
@@ -39,7 +47,11 @@ const ItemCard = ({ pizzaInfo }) => {
       </div>
       {!soldOut ? (
         <div className="itemCard_action">
-          <button className="itemCard_button" type="button">
+          <button
+            onClick={handleAddToCart}
+            className="itemCard_button"
+            type="button"
+          >
             ADD TO CARD
           </button>
         </div>

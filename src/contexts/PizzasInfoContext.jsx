@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { PIZZA_API } from "../constanses";
 
 export const PizzasContext = createContext(null);
 
@@ -9,7 +10,7 @@ const PizzasInfoContext = ({ children }) => {
     const getPizzas = async () => {
       try {
         const res = await fetch(
-          "https://react-fast-pizza-api.onrender.com/api/menu/"
+          `${PIZZA_API}/menu`
         );
 
         if (!res.ok) {
