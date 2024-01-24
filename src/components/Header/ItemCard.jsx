@@ -4,9 +4,9 @@ const ItemCard = ({ pizzaInfo }) => {
   let ingredientsUp = "";
 
   ingredients.forEach((ingredient) => {
-    let splitted = ingredient.split("");
-    let first = splitted[0].toUpperCase();
-    let rest = [...splitted];
+    const splitted = ingredient.split("");
+    const first = splitted[0].toUpperCase();
+    const rest = [...splitted];
     rest.splice(0, 1);
     ingredient = [first, ...rest].join("");
     if (ingredientsUp == "") ingredientsUp = ingredient;
