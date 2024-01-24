@@ -65,6 +65,9 @@
     width: 60%;
     justify-content: space-between;
 }
+.itemCard +.itemCard {
+   border-top:1px solid rgba(0, 0, 0, 0.4);
+}
 .itemCard_content{
     display: flex;
     

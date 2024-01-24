@@ -7,9 +7,9 @@ const Menu = () => {
 
   return (
     <div className="menu">
-      {pizzas.map((pizza)=>(
-         <ItemCard pizzaInfo={pizza} key={pizza.id}/>
-         ))}
+      {pizzas.map((pizza) => (
+        <ItemCard pizzaInfo={pizza} key={pizza.id} />
+      ))}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const PizzasContext = createContext(null);
 
 const PizzasInfoContext = ({ children }) => {
-  const [pizzas, setpizzas] = useState({});
+  const [pizzas, setpizzas] = useState([]);
 
   useEffect(() => {
     const getPizzas = async () => {
