@@ -1,13 +1,11 @@
-import CartItem from "../components/Header/CartItem";
-import { useContext } from "react";
-import { UserContext } from "../contexts/UserInfoContext";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { resetCart } from "../redux/slices/cartSlice";
+import CartItem from "../components/CartItem/CartItem";
 
 const Cart = () => {
-  const { value } = useContext(UserContext);
   const cartItems = useSelector((state) => state.cart.items);
+  const value = useSelector((state) => state.user.value);
   const dispatch = useDispatch();
 
   const backToMenu = useNavigate();

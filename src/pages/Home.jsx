@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../contexts/UserInfoContext";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setName } from "../redux/slices/userSlice";
 
 const Home = () => {
-  const { onChange } = useContext(UserContext);
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState("");
 
@@ -11,8 +12,7 @@ const Home = () => {
   };
 
   const submitForm = () => {
-    onChange(user);
-    console.log(user);
+    dispatch(setName(user));
   };
 
   return (

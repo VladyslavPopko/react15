@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../../contexts/UserInfoContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const { value } = useContext(UserContext);
+  const name = useSelector((state) => state.user.value);
 
   return (
     <nav className="header">
@@ -21,7 +20,7 @@ const Header = () => {
         type="name"
         placeholder="Search for the order #"
       />
-      {value == "" ? null : <p>{value}</p>}
+      {name == "" ? null : <p>{name}</p>}
     </nav>
   );
 };
