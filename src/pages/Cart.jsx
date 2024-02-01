@@ -8,18 +8,18 @@ const Cart = () => {
   const value = useSelector((state) => state.user.value);
   const dispatch = useDispatch();
 
-  const backToMenu = useNavigate();
+  const nextTo = useNavigate();
 
   const handleBackToMenu = () => {
-    backToMenu("/menu");
+    nextTo("/menu");
+  };
+  const handleOrder = () => {
+    nextTo("/order/new");
   };
   const handleResetCart = () => {
     dispatch(resetCart(cartItems));
   };
-  const submitOrder = () => {
-    console.log("Your Order:");
-    cartItems.map((item) => console.log(`${item.name} x ${item.qty}`));
-  };
+
   return (
     <div className="cart">
       <p className="cart_back" onClick={handleBackToMenu}>
@@ -31,7 +31,7 @@ const Cart = () => {
           <CartItem pizzaInfo={item} key={item.id} />
         ))}
       </ul>
-      <button onClick={submitOrder} className="cart_button" type="button">
+      <button onClick={handleOrder} className="cart_button" type="button">
         ORDER PIZZAS
       </button>
       <button

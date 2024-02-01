@@ -13,6 +13,7 @@ const Home = () => {
 
   const submitForm = () => {
     dispatch(setName(user));
+    localStorage.setItem("user",user)
   };
 
   return (

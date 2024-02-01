@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
+import NewOrder from "./pages/NewOrder";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/menu" element={<Menu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/order/new" element={<NewOrder />}></Route>
 
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
