@@ -197,43 +197,52 @@
 .cart_item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
+
 .newOrder {
     margin: 0 auto;
     width: 50%;
     padding: 25px 10px;
 }
-.newOrder_title{
+
+.newOrder_title {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-.newOrder_form_content{
+
+.newOrder_form_content {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.newOrder_item{
+
+.newOrder_item {
     display: flex;
     justify-content: space-between;
-    gap:20px;
+    gap: 20px;
 }
-.newOrder_name{
+
+.newOrder_name {
     width: 30%;
 }
-.newOrder_input, .newOrder_item_content{
+
+.newOrder_input, .newOrder_item_content {
     width: 100%;
 }
 
-.newOrder_item_content{
+.newOrder_item_content {
     margin-bottom: 25px;
 }
-.newOrder_checkbox{
+
+.newOrder_checkbox {
     margin-right: 10px;
 }
-.newOrder_checkboxText{
+
+.newOrder_checkboxText {
     display: inline-block;
 }
-.newOrder_button{
+
+.newOrder_button {
     padding: 15px 20px;
     outline: none;
     background-color: rgb(237, 173, 10);
@@ -242,4 +251,67 @@
     box-shadow: 0px 0px 4px black;
     cursor: pointer;
     display: inline-block;
+}
+
+.order {
+    margin: 0 auto;
+    width: 50%;
+    padding: 25px 10px;
+    font-size: 24px;
+}
+
+.orderTitle_content, .orderTimer_content, .orderItem_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderTitle_content {
+    margin-bottom: 10px;
+}
+
+.orderTitle_buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.orderTimer_content, .orderTotal_content {
+    background-color: lightgray;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.orderTimer_time, .orderItem_ingridients {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.orderTitle_area {
+    padding: 15px 20px;
+    outline: none;
+    background-color: rgb(20, 204, 23);
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px black;
+    display: inline-block;
+}
+
+.orderTitle_area__priority {
+    background-color: rgb(204, 32, 32);
+}
+
+.orderTotal_content {
+    margin-bottom: 10px;
+}
+
+.orderPriority_content {
+    display: flex;
+    justify-content: end;
+}
+
+.orderItem_header {
+    margin-bottom: 10px;
+}
+
+.orderItem_content {
+    margin-bottom: 15px;
 }
