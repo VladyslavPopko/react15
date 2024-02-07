@@ -1,10 +1,10 @@
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "../validationSchema";
 import Input from "../components/Input/input";
 import InputCheckbox from "../components/Input/InputCheckbox";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const NewOrder = () => {
   const name = useSelector((state) => state.user.value);
@@ -22,8 +22,6 @@ const NewOrder = () => {
     else setPrice(price - 8);
   };
 
-  const inputRef = useRef(null);
-
   const {
     handleSubmit,
     formState: { errors },
@@ -34,6 +32,7 @@ const NewOrder = () => {
       name: name,
       number: "",
       address: "",
+      checkbox: false,
     },
     resolver: yupResolver(validationSchema),
   });
@@ -50,39 +49,31 @@ const NewOrder = () => {
         <div className="newOrder_form_content">
           <div className="newOrder_item">
             <p className="newOrder_name">First Name</p>
-            <Controller
-              name="name"
-              control={control}
-              render={({ field }) => <Input {...field} innerRef={inputRef} />}
-            />
+            <Input control={control} name="name" />
           </div>
           {errors.name && <p className="erorMessage">{errors.name.message}</p>}
           <div className="newOrder_item">
             <p className="newOrder_name">Phone number</p>
-            <Controller
-              name="number"
-              control={control}
-              render={({ field }) => <Input {...field} innerRef={inputRef} />}
-            />
+            <Input name="number" control={control} />
           </div>
-          {errors.number && <p className="erorMessage">{errors.number.message}</p>}
+          {errors.number && (
+            <p className="erorMessage">{errors.number.message}</p>
+          )}
           <div className="newOrder_item">
             <p className="newOrder_name">Address</p>
-            <Controller
-              name="address"
-              control={control}
-              render={({ field }) => <Input {...field} innerRef={inputRef} />}
-            />
+            <Input control={control} name="address" />
           </div>
-          {errors.address && <p className="erorMessage">{errors.address.message}</p>}
+          {errors.address && (
+            <p className="erorMessage">{errors.address.message}</p>
+          )}
           <div className="newOrder_item newOrder_item__checkbox">
             <p className="newOrder_name"></p>
             <div className="newOrder_item_content">
-            <Controller
-              name="checkbox"
-              control={control}
-              render={({ field }) => <InputCheckbox  {...field} innerRef={inputRef} onChange={handleCheckbox} />}
-            />
+              <InputCheckbox
+                onClick={handleCheckbox}
+                control={control}
+                name="checkbox"
+              />
               <p className="newOrder_checkboxText">
                 Want to give your order priority?
               </p>

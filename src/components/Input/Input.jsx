@@ -1,18 +1,9 @@
-const Input = (props) => {
-  const { value, onChange, onBlur, name, innerRef } = props;
+import { useController } from "react-hook-form";
 
-  return (
-    <input
-      id={name}
-      className="newOrder_input"
-      type="text"
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-      name={name}
-      ref={innerRef}
-    />
-  );
+const Input = (props) => {
+  const { field, fieldState } = useController(props);
+
+  return <input className="newOrder_input" type="text" {...field} />;
 };
 
 export default Input;
