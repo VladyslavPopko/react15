@@ -5,6 +5,7 @@ import { validationSchema } from "../validationSchema";
 import Input from "../components/Input/input";
 import InputCheckbox from "../components/Input/InputCheckbox";
 import { useState } from "react";
+import { PIZZA_API } from "../constanses";
 
 const NewOrder = () => {
   const name = useSelector((state) => state.user.value);
@@ -37,9 +38,27 @@ const NewOrder = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (info) => {
+    const { address, number, checkbox: priority } = info;
+    const position = "";
+    const data = {
+      address,
+      name,
+      number,
+      priority,
+      position,
+      cartItems,
+    };
     console.log(data);
-    reset();
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
+
+    fetch(`${PIZZA_API}/order`, requestOptions).then(() =>
+      console.log("ADDED")
+    );
   };
 
   return (

@@ -14,9 +14,8 @@ const Menu = () => {
     <div className="menu">
       {isError && <h2>Some error</h2>}
       {isLoading && <h2>Loading...</h2>}
-      {!!menuItems && menuItems.map((pizza) => (
-        <ItemCard pizzaInfo={pizza} key={pizza.id} />
-      ))}
+      {!!menuItems &&
+        menuItems.map((pizza) => <ItemCard pizzaInfo={pizza} key={pizza.id} />)}
     </div>
   );
 };
